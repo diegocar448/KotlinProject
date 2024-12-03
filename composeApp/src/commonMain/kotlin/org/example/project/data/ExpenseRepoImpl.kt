@@ -5,7 +5,7 @@ import org.example.project.model.Expense
 import org.example.project.model.ExpenseCategory
 import kotlin.math.exp
 
-class ExpenseRepoImpl: ExpenseRepository {
+class ExpenseRepoImpl(private val expenseManager: ExpenseManager): ExpenseRepository {
     override fun getAllExpenses(): List<Expense> {
         return ExpenseManager.fakeExpenseList
     }
@@ -20,5 +20,9 @@ class ExpenseRepoImpl: ExpenseRepository {
 
     override fun getCategories(): List<ExpenseCategory> {
         return ExpenseManager.getCategories()
+    }
+
+    override fun deleteExpense(expense: Expense): List<Expense> {
+        TODO("Not yet implemented")
     }
 }
