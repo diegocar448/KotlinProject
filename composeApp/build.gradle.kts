@@ -41,6 +41,7 @@ kotlin {
             api(compose.animation)
             implementation(compose.material)
             implementation(compose.ui)
+            api(compose.materialIconsExtended)
             @OptIn(ExperimentalComposeLibrary::class)
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
