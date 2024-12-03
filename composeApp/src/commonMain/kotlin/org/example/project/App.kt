@@ -12,15 +12,22 @@ import moe.tlaster.precompose.PreComposeApp
 @Composable
 @Preview
 fun App() {
-    MaterialTheme {
+
         var showContent by remember { mutableStateOf(false) }
+
         PreComposeApp{
-            Column(Modifier.fillMaxWidth()) {
-                Text("Bem vindo")
-                Text("Kotlin Multiplataforma con compose")
+
+            val colors = getColorsTheme()
+
+            AppTheme{
+                Column(Modifier.fillMaxWidth()) {
+                    Text("Bem vindo", color = colors.textColor)
+                    Text("Kotlin Multiplataforma con compose")
+                }
             }
 
+
         }
-    }
+
 }
 
