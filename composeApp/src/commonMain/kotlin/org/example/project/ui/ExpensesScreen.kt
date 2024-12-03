@@ -29,12 +29,13 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import org.example.project.data.ExpenseManager
 import org.example.project.model.Expense
 import org.example.project.getColorsTheme
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun ExpensesScreen(){
+fun ExpensesScreen(onExpenseClick: (expense: Expense) -> Unit){
 
     val colors = getColorsTheme()
 
@@ -50,8 +51,8 @@ fun ExpensesScreen(){
                 AllExpensesHeader()
             }
         }
-        items( emptyList<String>() ){
-            //Composable
+        items( ExpenseManager.fakeExpenseList ){expense ->
+            ExpensesItem(expense = expense, onExpenseClick = onExpenseClick)
         }
     }
 }

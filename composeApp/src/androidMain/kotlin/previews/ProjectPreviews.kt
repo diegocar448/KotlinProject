@@ -11,6 +11,8 @@ import org.example.project.model.ExpenseCategory
 import org.example.project.ui.AllExpensesHeader
 import org.example.project.ui.ExpensesItem
 import org.example.project.ui.ExpensesTotalHeader
+import org.example.project.data.ExpenseManager
+import org.example.project.ui.ExpensesScreen
 
 @Preview(showBackground = true)
 @Composable
@@ -32,12 +34,14 @@ fun AllExpensesPreview(){
 @Composable
 fun ExpensesItemPreview(){
     Box(modifier = Modifier.padding(16.dp)){
-        ExpensesItem(expense = Expense(
-            id = 1L,
-            amount = 70.0,
-            category = ExpenseCategory.PARTY,
-            description = "Fim de semana"
-        ), onExpenseClick = {})
-
+        ExpensesItem(expense = ExpenseManager.fakeExpenseList[0],
+        onExpenseClick = {})
     }
+}
+
+
+@Preview(showBackground = true)
+@Composable
+fun ExpenseScreenPreview(){
+    ExpensesScreen( onExpenseClick = {} )
 }
