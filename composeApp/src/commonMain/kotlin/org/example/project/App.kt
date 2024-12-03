@@ -13,8 +13,6 @@ import moe.tlaster.precompose.PreComposeApp
 @Preview
 fun App() {
 
-        var showContent by remember { mutableStateOf(false) }
-
         PreComposeApp{
 
             val colors = getColorsTheme()
@@ -26,8 +24,6 @@ fun App() {
                 }
             }
 
-
         }
-
 }
 
